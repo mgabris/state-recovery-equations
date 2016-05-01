@@ -23,7 +23,7 @@ def compute_complexity(N, x,
                        generate_variables,
                        get_boundary_conditions, 
                        generate_equations, 
-                       ticks=False, start=None):
+                       ticks=False, start=None, return_kb=False):
     global cvars
     cvars = generate_variables(N)
     # Knowledge base -- dynamic programming memory
@@ -45,4 +45,7 @@ def compute_complexity(N, x,
         if ticks:
             print '{:3d} {:10.2f}'.format(i, float(log(KB[c1(i)], 2).n(prec)))
     
+    if return_kb:
+        return KB
+        
     return KB[cvar(1, x)]

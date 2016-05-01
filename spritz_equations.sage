@@ -88,4 +88,4 @@ def table():
         )
         print '{:3},{:3}: {:>7.2f}'.format(N, x, float(log(result, 2).n(prec)) )
 
-test()
+# test()
